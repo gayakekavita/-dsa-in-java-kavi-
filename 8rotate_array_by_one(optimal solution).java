@@ -22,4 +22,15 @@ public class Solution {
         return arr;
 
     }
+
+
+
+ /*  
+ 
+ time complexity:O(N)
+ space complexity:O(N)+O(1)
+ where O(1) is extra space required to solve the problem.
+ 
+ 
+ */
 }
