@@ -57,3 +57,39 @@ class Solution {
         return String.valueOf(c);
     }
 }
+
+//solution 3: without use of array 
+
+class Solution {
+    public String toLowerCase(String s) {
+        String result="";
+        for(int i=0;i<s.length();i++)
+        {
+            if (s.charAt(i) >= 'A' && s.charAt(i)<= 'Z')
+            {
+                result+=  (char)(s.charAt(i)+32);
+            }
+            else
+            {
+                result+= s.charAt(i);
+            }
+        }
+        return result;
+    }
+}
+
+//solution 4 using StringBuilder class 
+StringBuilder sb = new StringBuilder();
+
+        for(char c: s.toCharArray())
+        {
+            if ( c >= 65 && c<= 90){
+            c= (char) (c+32);
+            sb.append(c);
+            }
+            else
+            {
+                sb.append(c);
+            }
+        }
+        return sb.toString();
