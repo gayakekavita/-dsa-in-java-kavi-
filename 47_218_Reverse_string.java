@@ -1,0 +1,45 @@
+/*
+problem description
+
+Write a function that reverses a string. The input string is given as an array of characters s.
+
+You must do this by modifying the input array in-place with O(1) extra memory.
+
+ 
+
+Example 1:
+
+Input: s = ["h","e","l","l","o"]
+Output: ["o","l","l","e","h"]
+Example 2:
+
+Input: s = ["H","a","n","n","a","h"]
+Output: ["h","a","n","n","a","H"]
+*/
+
+//solution 1: using two pointer approch with while loop
+class Solution {
+    public void reverseString(char[] s) {
+        
+        int low=0;
+        int high=s.length-1;
+        while(low<=high)
+        {
+              char temp=s[low];
+              s[low]=s[high];
+              s[high]=temp;
+              high--;
+              low++;
+
+        }
+    }
+}
+
+//solution 2:: using for loop 
+
+          for(int i=0;i<(s.length)/2;i++){
+            char temp=s[i];
+            s[i]=s[s.length-1-i];
+            s[s.length-1-i]=temp;
+            
+         }
