@@ -58,3 +58,18 @@ class Solution {
         return (i==n)?true:false;
     }
 }
+
+//we can  eliminate comparision operation from the above code and make it more optimize 
+
+
+class Solution {
+    public boolean isPowerOfTwo(int n) {
+        //int i=1;
+        long i =1;
+        while(i<n)
+        {
+            i=i*2;
+        }
+        return i==n;
+    }
+}
