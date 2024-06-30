@@ -98,53 +98,57 @@ class Solution {
 
 
 // implementation::
-Input: nums = [5,7,7,8,8,10], target = 8
-  1. low=0
-     high= 5
-     while ( low<high)
-           (0<5)
-            mid= low+(high-low)/2;
-               =0+(5-0)/2
-               =5/2
-               =2
-           if( nums[mid] <target)
-                 7<8 
-                 low= mid+1
-                    =2+1
-                    =3 
+For the input: nums = [5,7,7,8,8,10], target = 8
 
-    2. low=3
-       high=5
-       while(3<5)
-                 mid= low+(high-low)/2
-                    = 3 +(5-3)/2
-                    = 3 + 1
-                    =4
-                    if(nums[4] <target)
-                       8<8 
-                       high= mid
-                           =4
-      3. low=3 
-         high= 4
-         while(3<4)
-                  mid= low+ (high-low)/2
-                     = 3+ (4-3)/2
-                     =3 + (1)/2
-                     =3 + (0.5)
-                     =3
-                  if(nums[mid]<target)
-                      8<8
-                        {
-                        }
-                        else
-                       {
-                          high=3
-                       }
-     4. low=3
-        high =3
-        while(3<3){
-       }
-       //here 3<3 condition state to false .
-     5. so here we are checking wheter the element present at low index is equal to target or not .
+Finding the first occurrence of the target:
+
+Initial low = 0, high = 5
+First iteration:
+mid = low + (high - low) / 2 = 0 + (5 - 0) / 2 = 2
+nums[mid] = nums[2] = 7
+Since nums[mid] < target (7 < 8), update low = mid + 1 = 2 + 1 = 3
+
+    
+Second iteration:
+low = 3, high = 5
+mid = low + (high - low) / 2 = 3 + (5 - 3) / 2 = 4
+nums[mid] = nums[4] = 8
+Since nums[mid] >= target (8 >= 8), update high = mid = 4
+
+    
+Third iteration:
+low = 3, high = 4
+mid = low + (high - low) / 2 = 3 + (4 - 3) / 2 = 3
+nums[mid] = nums[3] = 8
+Since nums[mid] >= target (8 >= 8), update high = mid = 3
+
+    
+Fourth iteration:
+low = 3, high = 3
+The while loop terminates since low is not less than high.
+Check if the element at low is the target:
+nums[low] = nums[3] = 8, which is equal to the target.
+Set res[0] = low = 3
+
+    
+Finding the last occurrence of the target:
+
+Reset high = 5, keep low = 3
+First iteration:
+mid = low + (high - low + 1) / 2 = 3 + (5 - 3 + 1) / 2 = 4
+nums[mid] = nums[4] = 8
+Since nums[mid] <= target (8 <= 8), update low = mid = 4
+Second iteration:
+low = 4, high = 5
+mid = low + (high - low + 1) / 2 = 4 + (5 - 4 + 1) / 2 = 5
+nums[mid] = nums[5] = 10
+Since nums[mid] > target (10 > 8), update high = mid - 1 = 5 - 1 = 4
+Third iteration:
+low = 4, high = 4
+The while loop terminates since low is not less than high.
+Set res[1] = high = 4
+So the final result is res = [3, 4]
+           
+         
          
   
