@@ -15,5 +15,8 @@
                 2. Depth First 
                       # here we traverse tree vertically .
                       # from top to bottom or vice versa .
-                      # types of depth first tra
+                      # types of depth first traversal are:
+                           1.preorder traversal (root----->left------>right)
+                           2 .postorder traversal(left--------->right-------->root)
+                           3. inorder traversal (left-------->root---------->right)
   
