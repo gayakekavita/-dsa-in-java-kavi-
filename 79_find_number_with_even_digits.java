@@ -47,3 +47,24 @@ class Solution {
      return res;   
     }
 }
+
+//solution 2
+class Solution {
+    public int findNumbers(int[] nums) {
+        int res = 0;
+        for (int num : nums) {
+            if (String.valueOf(num).length() % 2 == 0) {
+                res++;
+            }
+        }
+        return res;
+    }
+}
+/*
+Explanation:
+String Conversion: Convert each number to a string using String.valueOf(num).
+Length Check: Check if the length of the string representation of the number is even using .length() % 2 == 0.
+For-Each Loop: Use a for-each loop for more concise and readable code.
+This approach leverages the efficiency of string operations in Java and simplifies the digit-counting logic.
+
+*/
